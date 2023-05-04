@@ -58,3 +58,15 @@ for (persona of salarios) {
         empresas[trabajo.empresa][trabajo.year].push(trabajo.salario);
     }
 }
+
+function medianaEmpresaYear(nombre, year) {
+    if (!empresas[nombre]) {
+        console.warn(`La empresa ${nombre} no existe`);
+    }
+    else if (!empresas[nombre][year]) {
+        console.warn(`La empresa ${nombre} no tiene registros de salarios`);
+    }
+    else {
+        return PlatziMath.calcularMediana(empresas[nombre][year]);
+    }
+}
